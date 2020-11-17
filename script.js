@@ -27,7 +27,7 @@ peopleMinusBtn.disabled = true;
 // Increase tip percentage
 function tipIncrease() {
     tipInput.stepUp(1);
-    if (tipInput.value >= 1) {
+    if (tipInput.value >= 0) {
         tipMinusBtn.disabled = false;
     }
     if (tipInput.value >= 100) {
@@ -40,7 +40,7 @@ function tipIncrease() {
 // Decrease tip percentage
 function tipDecrease() {
     tipInput.stepDown(1);
-    if (tipInput.value == 1) {
+    if (tipInput.value == 0) {
         tipMinusBtn.disabled = true;
     }
     if (tipInput.value <= 99) {
@@ -50,9 +50,9 @@ function tipDecrease() {
     calculateTip();
 }
 
-// Disable respective tip percentage button when at min or max number (min: 1, max:100)
+// Disable respective tip percentage button when at min or max number (min: 0, max:100)
 function disableTipButtons() {
-    if (tipInput.value <= 1) {
+    if (tipInput.value <= 0) {
         tipMinusBtn.disabled = true;
     }else {
         tipMinusBtn.disabled = false;
